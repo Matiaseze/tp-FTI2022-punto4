@@ -1,0 +1,8 @@
+Instalacion
+
+Repo
+git pull https://github.com/Matiaseze/tp-FTI2022-punto4
+
+Requerimientos
+pip install -r requirements.txt
+
