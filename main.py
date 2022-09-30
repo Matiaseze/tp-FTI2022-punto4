@@ -2,26 +2,26 @@ import re
 import pandas as pd
 
 #Metodos
-def leer_libro(path):
+def leer_libro(path): #Lee el archivo
     return pd.read_excel(path)
 
-def estado_incial(libro):
+def estado_incial(libro): #Devuelve el primer estado que ese va a ser el inicial
     return libro["Estados"].values[0]
 
-def dame_lista_estados(libro):
+def dame_lista_estados(libro):#devuelve los estados en una lista
     return list(libro["Estados"].values)
 
-def filtrar_aceptadores(libro):
+def filtrar_aceptadores(libro):#filtra por estados aceptadores
     return libro[libro["Aceptador"] == "si"]
 
-def construir_diccionario(estados, libro):
+def construir_diccionario(estados, libro):#crea un diccionario de diccionarios para recorrer el automata
     diccionario_estados = {}
     for i in range(len(estados)):
             dic = { 'a' : libro['A'].values[i] , 'b' : libro['B'].values[i] }
             diccionario_estados[libro["Estados"].values[i]] = dic
     return diccionario_estados
 
-def validacion_cadena(cadena):
+def validacion_cadena(cadena): #valida la entrada de texto
     regex_cadena = re.compile(r"[a-b]*")
     return re.fullmatch(regex_cadena, cadena)
 
@@ -44,12 +44,12 @@ def main():
         estados_aceptadores = list(filtro_aceptadores['Estados'])
 
         for caracter in cadena:
-            if estado == "B":
-                break
+            if estado == "B": # = estado basura
+                break # si llega al estado basura termina ejecucion
             val_estado=diccionario_estados[estado]
-            print(f"Caminos posibles:{val_estado}")
+            print(f"Caminos posibles:{val_estado}") # muestro los caminos segun el estado
             estado=val_estado[caracter]
-            print(f"Me voy por estado:{estado}")
+            print(f"Me voy por estado:{estado}") #muestro el estado al que voy
         
         if(estado in estados_aceptadores):   
             print("el automata acepta la cadena")
