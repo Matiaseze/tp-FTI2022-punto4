@@ -1,8 +1,15 @@
-Instalacion
-
-Repo
+**************************
+//                      //
+//     Instalacion      //
+//                      //
+**************************
+1) Desplazarse por la consola BASH hasta el directorio deseado
+2) Escribir en la consola:
 git pull https://github.com/Matiaseze/tp-FTI2022-punto4
+para descargar repositorio de github en el directorio actual.
 
-Requerimientos
+3) Instalar Requerimientos:
 pip install -r requirements.txt
+
+4) Para ejecutar el programa escribir en consola: python ./main.python
 
