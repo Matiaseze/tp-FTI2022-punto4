@@ -5,8 +5,8 @@
 **************************
 1) Desplazarse por la consola BASH hasta el directorio deseado
 2) Escribir en la consola:
-git pull https://github.com/Matiaseze/tp-FTI2022-punto4
-para descargar repositorio de github en el directorio actual.
+git clone https://github.com/Matiaseze/tp-FTI2022-punto4
+para clonar repositorio de github en el directorio actual.
 
 3) Instalar Requerimientos:
 pip install -r requirements.txt
